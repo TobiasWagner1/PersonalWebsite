@@ -12,7 +12,12 @@
   <header>
     <nav>
       <div class="logo">Tobias Wagner</div>
-      <ul class="nav-links">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
         <li><a href="#about">Über mich</a></li>
         <li><a href="#achievements">Erfolge</a></li>
         <li><a href="#cv">Lebenslauf</a></li>
@@ -93,11 +98,13 @@
   <!-- Kontakt -->
   <section id="contact">
     <h2>Kontakt</h2>
-    <form id="contact-form">
+    <form id="contact-form" action="https://formspree.io/f/myegvnko" method="POST">
       <input type="text" name="name" placeholder="Dein Name" required>
       <input type="email" name="email" placeholder="Deine E-Mail" required>
       <textarea name="message" placeholder="Deine Nachricht" required></textarea>
+      <input type="text" name="_gotcha" style="display:none">
       <button type="submit">Senden</button>
+      <p id="form-status" class="form-status"></p>
     </form>
   </section>
 
