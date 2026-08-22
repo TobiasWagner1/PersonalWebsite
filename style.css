@@ -85,6 +85,41 @@ nav {
   color: var(--color-accent-light);
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Sprachumschalter DE / EN */
+.lang-switch {
+  display: flex;
+  gap: 6px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+.lang-btn.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
 /* Hamburger-Button, standardmäßig nur auf schmalen Screens sichtbar */
 .nav-toggle {
   display: none;
@@ -345,6 +380,15 @@ footer {
 
 /* ===== Responsive ===== */
 @media (max-width: 640px) {
+  .nav-right {
+    gap: 14px;
+  }
+
+  .lang-btn {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+
   .nav-toggle {
     display: flex;
   }

@@ -12,19 +12,25 @@
   <header>
     <nav>
       <div class="logo">Tobias Wagner</div>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about">Über mich</a></li>
-        <li><a href="#achievements">Erfolge</a></li>
-        <li><a href="#cv">Lebenslauf</a></li>
-        <li><a href="#projects">Projekte</a></li>
-        <li><a href="#skills">Fähigkeiten</a></li>
-        <li><a href="#contact">Kontakt</a></li>
-      </ul>
+      <div class="nav-right">
+        <div class="lang-switch">
+          <button type="button" class="lang-btn active" data-lang="de">DE</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about" data-i18n="nav.about">Über mich</a></li>
+          <li><a href="#achievements" data-i18n="nav.achievements">Erfolge</a></li>
+          <li><a href="#cv" data-i18n="nav.cv">Lebenslauf</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Projekte</a></li>
+          <li><a href="#skills" data-i18n="nav.skills">Fähigkeiten</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
@@ -32,8 +38,8 @@
   <section class="hero">
     <div class="hero-content">
       <div class="hero-text">
-        <h1>Hallo, ich bin Tobias</h1>
-        <p>Herzlich Willkommen auf meiner Website!
+        <h1 data-i18n="hero.title">Hallo, ich bin Tobias</h1>
+        <p data-i18n="hero.subtitle">Herzlich Willkommen auf meiner Website!
         </p>
       </div>
       <div class="hero-image">
@@ -44,50 +50,50 @@
 
   <!-- Über mich -->
   <section id="about">
-    <h2>Über mich</h2>
-    <p>Ich habe vorheriges Jahr meine Matura gemacht und bin befinde mich aktuell in einem Art Gap Year,
+    <h2 data-i18n="about.heading">Über mich</h2>
+    <p data-i18n="about.text">Ich habe vorheriges Jahr meine Matura gemacht und bin befinde mich aktuell in einem Art Gap Year,
         in dem ich versuche, meine IT-Skillset zu erweitern</p>
   </section>
 
   <!-- Aktuelle Erfolge -->
   <section id="achievements">
-    <h2>Aktuelle Erfolge</h2>
+    <h2 data-i18n="achievements.heading">Aktuelle Erfolge</h2>
     <div class="achievements-grid">
       <div class="achievement-card">
         <img src="matura.jpg" alt="Matura mit 1,0" class="achievement-image">
-        <h3>Matura mit 1,0</h3>
-        <p>Abschluss der Matura mit ausgezeichnetem Erfolg (Note 1,0).</p>
+        <h3 data-i18n="achievements.matura.title">Matura mit 1,0</h3>
+        <p data-i18n="achievements.matura.text">Abschluss der Matura mit ausgezeichnetem Erfolg (Note 1,0).</p>
       </div>
       <div class="achievement-card">
         <img src="hans-riegel-fachpreis.jpg" alt="Hans Riegel Fachpreis" class="achievement-image">
-        <h3>Hans Riegel Fachpreis</h3>
-        <p>Auszeichnung für meine Abschlussarbeit mit dem Hans Riegel Fachpreis.</p>
-        <a href="abschlussarbeit.pdf" download class="achievement-download">Abschlussarbeit als PDF herunterladen</a>
+        <h3 data-i18n="achievements.hansriegel.title">Hans Riegel Fachpreis</h3>
+        <p data-i18n="achievements.hansriegel.text">Auszeichnung für meine Abschlussarbeit mit dem Hans Riegel Fachpreis.</p>
+        <a href="abschlussarbeit.pdf" download class="achievement-download" data-i18n="achievements.hansriegel.download">Abschlussarbeit als PDF herunterladen</a>
       </div>
     </div>
   </section>
 
   <!-- Lebenslauf -->
   <section id="cv">
-    <h2>Lebenslauf</h2>
+    <h2 data-i18n="cv.heading">Lebenslauf</h2>
     <ul>
-      <li>Frühjahr 2026 – heute: "Gap Year"</li>
-      <li>2018 - 2026: BRG Schloss Wagrain Vöcklabruck</li>
+      <li data-i18n="cv.item1">Frühjahr 2026 – heute: "Gap Year"</li>
+      <li data-i18n="cv.item2">2018 - 2026: BRG Schloss Wagrain Vöcklabruck</li>
     </ul>
   </section>
 
   <!-- Projekte -->
   <section id="projects">
-    <h2>Projekte</h2>
+    <h2 data-i18n="projects.heading">Projekte</h2>
     <div class="project-card">
-      <h3>Digitales Skillset erweitern</h3>
-      <p>Erwerbung grundlegender Fähigkeiten in den Bereichen Webentwicklung, Coding und Mathematics for AI</p>
+      <h3 data-i18n="projects.item1.title">Digitales Skillset erweitern</h3>
+      <p data-i18n="projects.item1.text">Erwerbung grundlegender Fähigkeiten in den Bereichen Webentwicklung, Coding und Mathematics for AI</p>
     </div>
   </section>
 
   <!-- Fähigkeiten -->
   <section id="skills">
-    <h2>Fähigkeiten</h2>
+    <h2 data-i18n="skills.heading">Fähigkeiten</h2>
     <ul class="skills-list">
       <li>HTML / CSS</li>
       <li>JavaScript</li>
@@ -97,13 +103,13 @@
 
   <!-- Kontakt -->
   <section id="contact">
-    <h2>Kontakt</h2>
-    <form id="contact-form" action="https://formspree.io/f/myegvnko" method="POST">
-      <input type="text" name="name" placeholder="Dein Name" required>
-      <input type="email" name="email" placeholder="Deine E-Mail" required>
-      <textarea name="message" placeholder="Deine Nachricht" required></textarea>
+    <h2 data-i18n="contact.heading">Kontakt</h2>
+    <form id="contact-form" action="https://formspree.io/f/DEINE_FORM_ID" method="POST">
+      <input type="text" name="name" data-i18n-placeholder="contact.name" placeholder="Dein Name" required>
+      <input type="email" name="email" data-i18n-placeholder="contact.email" placeholder="Deine E-Mail" required>
+      <textarea name="message" data-i18n-placeholder="contact.message" placeholder="Deine Nachricht" required></textarea>
       <input type="text" name="_gotcha" style="display:none">
-      <button type="submit">Senden</button>
+      <button type="submit" data-i18n="contact.send">Senden</button>
       <p id="form-status" class="form-status"></p>
     </form>
   </section>
