@@ -198,6 +198,32 @@ nav {
   border: 3px solid var(--color-accent);
 }
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--color-text-muted);
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.social-link:hover {
+  color: var(--color-accent-light);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
 /* ===== Abwechselnder Hintergrund je Section ===== */
 section:nth-of-type(even) {
   background: var(--color-bg-alt);
@@ -206,7 +232,7 @@ section:nth-of-type(even) {
 /* ===== Aktuelle Erfolge ===== */
 .achievements-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
 }
 
@@ -271,6 +297,12 @@ section:nth-of-type(even) {
 }
 
 /* ===== Projekte ===== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
 .project-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -379,6 +411,13 @@ footer {
 }
 
 /* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .achievements-grid,
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 640px) {
   .nav-right {
     gap: 14px;
@@ -450,7 +489,8 @@ footer {
     height: 240px;
   }
 
-  .achievements-grid {
+  .achievements-grid,
+  .projects-grid {
     grid-template-columns: 1fr;
   }
 }

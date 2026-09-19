@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+ 
   <!-- Navigation -->
   <header>
     <nav>
@@ -44,6 +44,18 @@
       </div>
       <div class="hero-image">
         <img src="profil.jpg" alt="Foto von Tobias Wagner">
+        <div class="social-links">
+          <a href="https://github.com/TobiasWagner1" target="_blank" rel="noopener" aria-label="GitHub" class="social-link">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+              <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.77.12 3.06.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.27 5.69.42.36.78 1.07.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.21.66.79.55A10.51 10.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/tobias-wagner-517390427/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+              <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -51,8 +63,7 @@
   <!-- Über mich -->
   <section id="about">
     <h2 data-i18n="about.heading">Über mich</h2>
-    <p data-i18n="about.text">Ich habe vorheriges Jahr meine Matura gemacht und bin befinde mich aktuell in einem Art Gap Year,
-        in dem ich versuche, meine IT-Skillset zu erweitern</p>
+    <p data-i18n="about.text">Im Frühjahr 2026 habe ich meine Matura abgeschlossen und hätte danach eigentlich vor gehabt, meinen Zivildienst zu beginnen. Da ich aber kurzfristig für untauglich (Knieprobleme) erklärt wurde, bin ich in eine Art "Gap Year" gezwungen worden. Im Moment nutze ich die gewonnene Zeit, um mein IT Skillset auszubauen. Ich komme von einem stark naturwissenschaftlich orientierten Hintergrund und möchte mich langfristig auf die Schnittstelle zwischen moderner Technologie und Naturwissenschaften konzentrieren (Stichwort: KI bei der Proteinmodellierung). Ab nächstem Jahr werde ich dafür auch mit einem Studium beginnen (CSE an der ETH oder Bioinformatik an der TUM). Bis dahin würde ich mich sehr über Möglichkeiten für (unbezahlte) Praktika freuen, die ich dann gegebenenfalls auch während des Studiums weiterführen kann (nutzen Sie gerne das Kontaktformular am Ende der Seite!!)</p>
   </section>
 
   <!-- Aktuelle Erfolge -->
@@ -70,6 +81,11 @@
         <p data-i18n="achievements.hansriegel.text">Auszeichnung für meine Abschlussarbeit mit dem Hans Riegel Fachpreis.</p>
         <a href="abschlussarbeit.pdf" download class="achievement-download" data-i18n="achievements.hansriegel.download">Abschlussarbeit als PDF herunterladen</a>
       </div>
+      <div class="achievement-card">
+        <img src="Young Science.png" alt="Young Science - Jugend innovativ" class="achievement-image">
+        <h3 data-i18n="achievements.youngscience.title">3. Platz Young Science - Jugend innovativ</h3>
+        <p data-i18n="achievements.youngscience.text">Die steigende Antibiotikaresistenz von Bakterien ist eine der größten Herausforderungen der aktuellen Medizin. In einem Wahlpflichtfach hat unser Team mit alternativen Mitteln (zB. Pechsalbe) und naturwissenschaftlichen Methoden (zB. Agardiffusionstest) nach Lösungen gesucht.</p>
+      </div>
     </div>
   </section>
 
@@ -85,9 +101,19 @@
   <!-- Projekte -->
   <section id="projects">
     <h2 data-i18n="projects.heading">Projekte</h2>
-    <div class="project-card">
-      <h3 data-i18n="projects.item1.title">Digitales Skillset erweitern</h3>
-      <p data-i18n="projects.item1.text">Erwerbung grundlegender Fähigkeiten in den Bereichen Webentwicklung, Coding und Mathematics for AI</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3 data-i18n="projects.item1.title">Coding Grundlagen</h3>
+        <p data-i18n="projects.item1.text">Auch wenn ich kein reiner Softwareentwickler sein möchte, halte ich gewisse Grundlagen für essenziell. Im Moment nutze ich die Harvard online Kurse CS50P und CS50x um einen Überblick für Python bzw. generell Computer Science zu bekommen.</p>
+      </div>
+      <div class="project-card">
+        <h3 data-i18n="projects.item2.title">Künstliche Intelligenz in der Entwicklung</h3>
+        <p data-i18n="projects.item2.text">Um ein fundamentales Verständnis für die Funktionsweise von KI aufzubauen, besuche ich ab 1. Oktober Vorlesungen des Bachelors Artificial Intelligence an der JKU.</p>
+      </div>
+      <div class="project-card">
+        <h3 data-i18n="projects.item3.title">Künstliche Intelligenz als Anwender</h3>
+        <p data-i18n="projects.item3.text">Künstliche Intelligenz zu verstehen ist die eine Sache, sie effektiv anzuwenden die andere. Im Moment nutze ich einen Hostinger Server, um mit einem Hermes Agenten zu experimentieren. In naher Zukunft will ich mir auch Openclaw und n8n nochmal genauer ansehen.</p>
+      </div>
     </div>
   </section>
 
@@ -95,9 +121,9 @@
   <section id="skills">
     <h2 data-i18n="skills.heading">Fähigkeiten</h2>
     <ul class="skills-list">
-      <li>HTML / CSS</li>
-      <li>JavaScript</li>
-      <li>Git / GitHub</li>
+      <li data-i18n="skills.item1">Public Speaking</li>
+      <li data-i18n="skills.item2">Naturwissenschaften (fundiertes Wissen aufgrund Schwerpunkt in der Schule)</li>
+      <li data-i18n="skills.item3">Hoffentlich bald: Naturwissenschaften x KI</li>
     </ul>
   </section>
 
