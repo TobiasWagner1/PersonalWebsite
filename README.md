@@ -1,1 +1,1 @@
-test
+This is my very first project, in which I connected my ClaudePro to VS Code with the aim of coding this personal website. Moreover, I experimented with git, gitbash and github to get used to the coding workflow.
