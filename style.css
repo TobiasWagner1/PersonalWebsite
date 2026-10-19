@@ -230,6 +230,13 @@ section:nth-of-type(even) {
 }
 
 /* ===== Aktuelle Erfolge ===== */
+.news-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 900px;
+  gap: 32px;
+}
+
 .achievements-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
