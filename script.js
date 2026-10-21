@@ -13,6 +13,9 @@ const translations = {
     'about.text':
       'Im Frühjahr 2026 habe ich meine Matura abgeschlossen und hätte danach eigentlich vor gehabt, meinen Zivildienst zu beginnen. Da ich aber kurzfristig für untauglich (Knieprobleme) erklärt wurde, bin ich in eine Art "Gap Year" gezwungen worden. Im Moment nutze ich die gewonnene Zeit, um mein IT Skillset auszubauen. Ich komme von einem stark naturwissenschaftlich orientierten Hintergrund und möchte mich langfristig auf die Schnittstelle zwischen moderner Technologie und Naturwissenschaften konzentrieren (Stichwort: KI bei der Proteinmodellierung). Ab nächstem Jahr werde ich dafür auch mit einem Studium beginnen (CSE an der ETH oder Bioinformatik an der TUM). Bis dahin würde ich mich sehr über Möglichkeiten für (unbezahlte) Praktika freuen, die ich dann gegebenenfalls auch während des Studiums weiterführen kann (nutzen Sie gerne das Kontaktformular am Ende der Seite!!)',
     'news.heading': 'Aktuelles',
+    'news.n8n.title': 'n8n im Test',
+    'news.n8n.text': 'Ich habe n8n getestet',
+    'news.n8n.download': 'Report n8n.docx herunterladen',
     'news.hermes.title': 'Testphase von Hermes Agent abgeschlossen',
     'news.hermes.text': 'Über die letzten Monate habe ich einen Hermes Agenten getestet. Hier mein Fazit:',
     'news.hermes.download': 'Report Hermes Agent.docx herunterladen',
@@ -66,6 +69,9 @@ const translations = {
     'about.text':
       'In spring 2026 I finished secondary school (Matura) and had actually planned to start my civilian service afterwards. Since I was unexpectedly declared unfit for it (knee problems), I ended up in a kind of "gap year" instead. Right now I\'m using this time to build up my IT skillset. I come from a strongly science-oriented background and want to focus long-term on the intersection of modern technology and the natural sciences (keyword: AI in protein modeling). Starting next year I\'ll begin a degree in this direction (CSE at ETH or Bioinformatics at TUM). Until then, I\'d be very happy about opportunities for (unpaid) internships that I could potentially continue alongside my studies (feel free to use the contact form at the bottom of the page!!)',
     'news.heading': 'Latest',
+    'news.n8n.title': 'Testing n8n',
+    'news.n8n.text': 'I tested n8n',
+    'news.n8n.download': 'Download n8n report (.docx)',
     'news.hermes.title': 'Hermes Agent testing phase completed',
     'news.hermes.text': 'Over the past few months, I tested a Hermes agent. Here are my conclusions:',
     'news.hermes.download': 'Download Hermes Agent report (.docx)',
