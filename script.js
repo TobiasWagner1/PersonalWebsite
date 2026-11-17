@@ -11,8 +11,10 @@ const translations = {
     'hero.subtitle': 'Herzlich Willkommen auf meiner Website!',
     'about.heading': 'Über mich',
     'about.text':
-      'Im Frühjahr 2026 habe ich meine Matura abgeschlossen und hätte danach eigentlich vor gehabt, meinen Zivildienst zu beginnen. Da ich aber kurzfristig für untauglich (Knieprobleme) erklärt wurde, bin ich in eine Art "Gap Year" gezwungen worden. Im Moment nutze ich die gewonnene Zeit, um mein IT Skillset auszubauen. Ich komme von einem stark naturwissenschaftlich orientierten Hintergrund und möchte mich langfristig auf die Schnittstelle zwischen moderner Technologie und Naturwissenschaften konzentrieren (Stichwort: KI bei der Proteinmodellierung). Ab nächstem Jahr werde ich dafür auch mit einem Studium beginnen (CSE an der ETH oder Bioinformatik an der TUM). Bis dahin würde ich mich sehr über Möglichkeiten für (unbezahlte) Praktika freuen, die ich dann gegebenenfalls auch während des Studiums weiterführen kann (nutzen Sie gerne das Kontaktformular am Ende der Seite!!)',
+      'Im Frühjahr 2026 habe ich meine Matura abgeschlossen und wurde dann aufgrund ein paar unglücklicher Umstände in eine Art "Gap Year" gezwungen. Im Moment nutze ich die gewonnene Zeit, um mein IT Skillset auszubauen. Ich komme von einem stark naturwissenschaftlich orientierten Hintergrund und möchte mich langfristig auf die Schnittstelle zwischen moderner Technologie und Naturwissenschaften konzentrieren (Stichwort: KI bei der Proteinmodellierung). Ab nächstem Jahr werde ich dafür auch mit einem Studium beginnen (CSE an der ETH). Da ich diesen Weg zwar spannend finde, ihn durch KI aber auch in gewissem Ausmaß als bedroht sehe, bin ich auch offen für Alternativen. Im Moment experimentiere ich dementsprechend auch viel mit Startup Ideen und eigenen Projekten herum. So oder so denke ich, dass Erfahrungen im tatsächlichen Berufsalltag immer wichtiger werden, weshalb ich mich sehr über (unbezahlte) Praktika freuen würde (Kontaktformular am Ende der Seite).',
     'news.heading': 'Aktuelles',
+    'news.prev': 'Zurück',
+    'news.next': 'Weiter',
     'news.cs50p.title': 'Harvard CS50P (fast) abgeschlossen',
     'news.cs50p.text': 'Den Großteil von Harvards Python-Kurs CS50P habe ich abgeschlossen. Hier mein Fazit:',
     'news.cs50p.download': 'Report CS50P.docx herunterladen',
@@ -73,8 +75,10 @@ const translations = {
     'hero.subtitle': 'Welcome to my website!',
     'about.heading': 'About me',
     'about.text':
-      'In spring 2026 I finished secondary school (Matura) and had actually planned to start my civilian service afterwards. Since I was unexpectedly declared unfit for it (knee problems), I ended up in a kind of "gap year" instead. Right now I\'m using this time to build up my IT skillset. I come from a strongly science-oriented background and want to focus long-term on the intersection of modern technology and the natural sciences (keyword: AI in protein modeling). Starting next year I\'ll begin a degree in this direction (CSE at ETH or Bioinformatics at TUM). Until then, I\'d be very happy about opportunities for (unpaid) internships that I could potentially continue alongside my studies (feel free to use the contact form at the bottom of the page!!)',
+      'In spring 2026 I finished secondary school (Matura) and, due to a few unfortunate circumstances, was then forced into a kind of "gap year". Right now I\'m using this time to build up my IT skillset. I come from a strongly science-oriented background and want to focus long-term on the intersection of modern technology and the natural sciences (keyword: AI in protein modeling). Starting next year I\'ll begin a degree in this direction (CSE at ETH). While I find this path exciting, I also see it as threatened by AI to a certain extent, so I\'m open to alternatives as well. Accordingly, I\'m currently experimenting a lot with startup ideas and my own projects. Either way, I believe that experience in an actual work environment is becoming more and more important, which is why I\'d be very happy about (unpaid) internships (contact form at the bottom of the page).',
     'news.heading': 'Latest',
+    'news.prev': 'Previous',
+    'news.next': 'Next',
     'news.cs50p.title': 'Harvard CS50P (almost) completed',
     'news.cs50p.text': "I've completed most of Harvard's Python course CS50P. Here are my conclusions:",
     'news.cs50p.download': 'Download CS50P report (.docx)',
@@ -143,6 +147,13 @@ function applyLanguage(lang) {
     }
   });
 
+  document.querySelectorAll('[data-i18n-aria]').forEach((el) => {
+    const key = el.getAttribute('data-i18n-aria');
+    if (dict[key] !== undefined) {
+      el.setAttribute('aria-label', dict[key]);
+    }
+  });
+
   document.querySelectorAll('.lang-btn').forEach((btn) => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
@@ -189,6 +200,32 @@ document.addEventListener('DOMContentLoaded', () => {
         navToggle.setAttribute('aria-label', 'Menü öffnen');
       });
     });
+  }
+
+  // Aktuelles-Slider (Pfeile + Wischen)
+  const newsTrack = document.getElementById('news-track');
+  const newsPrev = document.getElementById('news-prev');
+  const newsNext = document.getElementById('news-next');
+
+  if (newsTrack && newsPrev && newsNext) {
+    const step = () => {
+      const card = newsTrack.querySelector('.achievement-card');
+      const gap = parseFloat(getComputedStyle(newsTrack).columnGap) || 0;
+      return card ? card.getBoundingClientRect().width + gap : newsTrack.clientWidth;
+    };
+
+    const updateArrows = () => {
+      const maxScroll = newsTrack.scrollWidth - newsTrack.clientWidth;
+      newsPrev.parentElement.hidden = maxScroll <= 2;
+      newsPrev.disabled = newsTrack.scrollLeft <= 2;
+      newsNext.disabled = newsTrack.scrollLeft >= maxScroll - 2;
+    };
+
+    newsPrev.addEventListener('click', () => newsTrack.scrollBy({ left: -step(), behavior: 'smooth' }));
+    newsNext.addEventListener('click', () => newsTrack.scrollBy({ left: step(), behavior: 'smooth' }));
+    newsTrack.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows);
+    updateArrows();
   }
 
   // Kontaktformular

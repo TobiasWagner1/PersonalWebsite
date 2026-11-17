@@ -230,10 +230,80 @@ section:nth-of-type(even) {
 }
 
 /* ===== Aktuelle Erfolge ===== */
-.news-grid {
+.news-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.news-head h2 {
+  margin-bottom: 0;
+}
+
+.news-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.news-nav[hidden] {
+  display: none;
+}
+
+.news-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--color-accent-light);
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.news-arrow:hover:not(:disabled) {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+.news-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* Slider: 3 Karten sichtbar, Rest per Pfeil oder Wischen */
+.news-grid {
+  --news-gap: 32px;
+  --news-per-view: 3;
+  display: flex;
+  gap: var(--news-gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 6px 0 4px;
+  margin-top: -6px;
+}
+
+.news-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.news-grid > .achievement-card {
+  flex: 0 0 calc((100% - (var(--news-per-view) - 1) * var(--news-gap)) / var(--news-per-view));
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-grid > .achievement-card .achievement-download {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 .achievements-grid {
@@ -419,7 +489,8 @@ footer {
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
   .news-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    --news-per-view: 2;
+    --news-gap: 24px;
   }
 
   .achievements-grid,
@@ -429,8 +500,19 @@ footer {
 }
 
 @media (max-width: 640px) {
+  /* Handy: eine Karte, die nächste schaut ein Stück heraus -> zeigt, dass man wischen kann */
   .news-grid {
-    grid-template-columns: minmax(0, 1fr);
+    --news-gap: 16px;
+  }
+
+  .news-grid > .achievement-card {
+    flex: 0 0 85%;
+    padding: 24px;
+  }
+
+  .news-arrow {
+    width: 38px;
+    height: 38px;
   }
 
   .nav-right {

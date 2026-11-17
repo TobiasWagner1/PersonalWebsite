@@ -63,13 +63,23 @@
   <!-- Über mich -->
   <section id="about">
     <h2 data-i18n="about.heading">Über mich</h2>
-    <p data-i18n="about.text">Im Frühjahr 2026 habe ich meine Matura abgeschlossen und hätte danach eigentlich vor gehabt, meinen Zivildienst zu beginnen. Da ich aber kurzfristig für untauglich (Knieprobleme) erklärt wurde, bin ich in eine Art "Gap Year" gezwungen worden. Im Moment nutze ich die gewonnene Zeit, um mein IT Skillset auszubauen. Ich komme von einem stark naturwissenschaftlich orientierten Hintergrund und möchte mich langfristig auf die Schnittstelle zwischen moderner Technologie und Naturwissenschaften konzentrieren (Stichwort: KI bei der Proteinmodellierung). Ab nächstem Jahr werde ich dafür auch mit einem Studium beginnen (CSE an der ETH oder Bioinformatik an der TUM). Bis dahin würde ich mich sehr über Möglichkeiten für (unbezahlte) Praktika freuen, die ich dann gegebenenfalls auch während des Studiums weiterführen kann (nutzen Sie gerne das Kontaktformular am Ende der Seite!!)</p>
+    <p data-i18n="about.text">Im Frühjahr 2026 habe ich meine Matura abgeschlossen und wurde dann aufgrund ein paar unglücklicher Umstände in eine Art "Gap Year" gezwungen. Im Moment nutze ich die gewonnene Zeit, um mein IT Skillset auszubauen. Ich komme von einem stark naturwissenschaftlich orientierten Hintergrund und möchte mich langfristig auf die Schnittstelle zwischen moderner Technologie und Naturwissenschaften konzentrieren (Stichwort: KI bei der Proteinmodellierung). Ab nächstem Jahr werde ich dafür auch mit einem Studium beginnen (CSE an der ETH). Da ich diesen Weg zwar spannend finde, ihn durch KI aber auch in gewissem Ausmaß als bedroht sehe, bin ich auch offen für Alternativen. Im Moment experimentiere ich dementsprechend auch viel mit Startup Ideen und eigenen Projekten herum. So oder so denke ich, dass Erfahrungen im tatsächlichen Berufsalltag immer wichtiger werden, weshalb ich mich sehr über (unbezahlte) Praktika freuen würde (Kontaktformular am Ende der Seite).</p>
   </section>
 
   <!-- Aktuelles -->
   <section id="news">
-    <h2 data-i18n="news.heading">Aktuelles</h2>
-    <div class="news-grid">
+    <div class="news-head">
+      <h2 data-i18n="news.heading">Aktuelles</h2>
+      <div class="news-nav">
+        <button type="button" class="news-arrow" id="news-prev" aria-label="Zurück" data-i18n-aria="news.prev">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button type="button" class="news-arrow" id="news-next" aria-label="Weiter" data-i18n-aria="news.next">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="news-grid" id="news-track">
       <div class="achievement-card">
         <h3 data-i18n="news.cs50p.title">Harvard CS50P (fast) abgeschlossen</h3>
         <p data-i18n="news.cs50p.text">Den Großteil von Harvards Python-Kurs CS50P habe ich abgeschlossen. Hier mein Fazit:</p>
